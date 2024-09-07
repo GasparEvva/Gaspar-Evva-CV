@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu - Détection des Ondes Gravitationnelles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e2e2e;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        #gameCanvas {
+            border: 1px solid white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Détection des Ondes Gravitationnelles</h1>
+<p>Cliquez sur l'onde gravitationnelle pour débloquer des parties de mon CV !</p>
+
+<canvas id="gameCanvas" width="500" height="500"></canvas>
+
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Fonction pour dessiner une onde
+    function drawWave() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.arc(250, 250, 100, 0, Math.PI * 2, false); // Cercle pour l'onde
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 4;
+        ctx.stroke();
+    }
+
+    // Détecter le clic
+    canvas.addEventListener('click', function() {
+        alert('Vous avez détecté une onde ! Une nouvelle section de votre CV est débloquée.');
+        // Ici on pourra ajouter du contenu sur ton CV à débloquer
+    });
+
+    // Dessiner l'onde initiale
+    drawWave();
+</script>
+
+</body>
+</html>
